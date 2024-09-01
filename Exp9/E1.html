@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <style>
+            table {
+                width: 50%;
+                margin: 20px auto;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: rgb(111, 225, 105);
+                color: aliceblue;
+            }
+        </style>
+        <script>
+            var app = angular.module('productApp', []);
+            app.controller('productController', function ($scope) {
+                $scope.products = [];
+                $scope.newProduct = {};
+                $scope.addProduct = function () {
+                    if ($scope.newProduct.name && $scope.newProduct.price) {
+                        $scope.products.push({
+                            name: $scope.newProduct.name,
+                            price:"Rs."+ $scope.newProduct.price
+                        });
+                        $scope.newProduct = {};
+                    }
+                };
+                $scope.deleteProduct = function (index) {
+                    $scope.products.splice(index, 1);
+                };
+            });
+        </script>
+    </head>
+    <body ng-app="productApp" ng-controller="productController">
+        <h1 align = "center" style="color: blue;">Product Inventory System</h1>
+        <form align = "center">
+            <label for="productName" style="color: blue;">Enter the Product Name:</label><br>
+            <input type="text" id="productName" ng-model="newProduct.name" required><br><br>
+            <label for="productPrice" style="color: blue;">Enter the Product Price:</label><br>
+            <input type="number" id="productPrice" ng-model="newProduct.price" required><br><br>
+            <button type="button" ng-click="addProduct()">Add Product</button>
+        </form>
+        <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Remove</th>
+                </tr>
+                <tr ng-repeat="product in products">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price}}</td>
+                    <td><a href="#" ng-click="deleteProduct($index)">Delete</a></td>
+                </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Textbox</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Question 2</h1>
+    <div id="textbox-container">
+        <input type="text" class="dynamic-textbox" placeholder="Enter text">
+        <button class="remove-textbox">Remove Textbox</button>
+    </div>
+    <button id="add-textbox">Add Textbox</button>
+
+    <script>
+        $(document).ready(function() {
+            // Add a new textbox when the "Add Textbox" button is clicked
+            $("#add-textbox").click(function() {
+                var newTextbox = '<div><input type="text" class="dynamic-textbox" placeholder="Enter text"><button class="remove-textbox">Remove Textbox</button></div>';
+                $("#textbox-container").append(newTextbox);
+            });
+
+            // Remove a textbox when the "Remove Textbox" button inside the textbox is clicked
+            $("#textbox-container").on("click", ".remove-textbox", function() {
+                $(this).parent().remove();
+            });
+        });
+    </script>
+</body>
+</html>

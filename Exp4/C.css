@@ -1,0 +1,74 @@
+body{
+    background-color: rgb(31, 85, 185);
+    background-image: url(https://wallpapercave.com/wp/HcVql6N.jpg);
+}
+h1{
+    color: black;
+}
+dl{
+    position: fixed;
+    padding: 10% 15% 10% 20%;
+}
+li{
+    float: left;
+    background-color: rgb(25, 19, 50);
+    padding: 2% 10.8% 2% 10.8%;
+    display: block;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+}
+li a{
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: medium;
+    text-decoration: none;
+    font-weight: bold;
+}
+li:hover{
+    background-color: darkgrey;
+}
+
+#set1{
+    border-radius: 25px;
+    background: rgb(19, 147, 190);
+    padding: 20px 30px 200px 20px;
+    width: 300px;
+    height: 200px;
+    background-position: right;
+    box-shadow: 5px 10px;
+    position: relative;
+}
+#set2{
+    border-radius: 25px;
+    background: rgb(19, 147, 190);
+    padding: 20px 30px 200px 20px;
+    width: 320px;
+    height: 220px;
+    background-position: left;
+    box-shadow: 5px 10px;
+    position: relative;
+}
+
+input[type=text]{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=password]{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=email]{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+label{
+    text-align: left;
+    width: 100%;
+}

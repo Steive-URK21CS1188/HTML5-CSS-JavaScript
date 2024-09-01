@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loan Calc</title>
+        <script>
+            function cal(){
+                var p=parseFloat(document.getElementById("amount").value);
+                var a=parseFloat(document.getElementById("interest").value)
+                var y=parseFloat(document.getElementById("tens").value);
+                var r=a/(12*100);
+                var n= y * 12;
+                var emi = (p*r*((1+r)**n))/(((1+r)**n) - 1);
+                var inter=p*r*n;
+                var rep=parseFloat(p+inter);
+                document.getElementById('la').innerHTML=("LoanAmount :Rs." + p);
+                document.getElementById('ti').innerHTML=("Total Interest :Rs." + inter);
+                document.getElementById('emi').innerHTML=("EMI :Rs." + emi);
+                document.getElementById('ta').innerHTML=("Total Repayment :Rs." + rep);
+             }
+        </script>
+    </head>
+    <body>
+        <br><br><br>
+        <table align="center" >
+            <tr>
+                <td style="padding: 0% 0% 15% 0%;width: 10cm;" >
+                    <div style="border: thick;border-color:blue;border-style: solid;padding: 0% 5% 10% 5%;width: 10cm;">
+                        <h1>Loan EMI Calculator</h1>
+                        <p>LoanAmount(Rs.):</p>
+                        <input type="text" name="amount" id="amount" onkeyup="cal()"><br>
+                        <p>AnnualInterestRate(%):</p>
+                        <input type="text" name="interest" id="interest" onkeyup="cal()"><br>
+                        <p>Tenure(Years):</p>
+                        <input type="text" name="tens" id="tens" onkeyup="cal()"><br><br><br>
+                        <div id="la" style="border: thin;border-color:black;border-style: solid;padding: 2% 0% 2% 0%;background-color: blue;color: aliceblue;">   
+                        </div>
+                        <br>
+                        <div id="ti" style="border: thin;border-color:black;border-style: solid;padding: 2% 0% 2% 0%;background-color: blue;color: aliceblue;">
+                        </div>
+                        <br>
+                        <div id="emi" style="border: thin;border-color:black;border-style: solid;padding: 2% 0% 2% 0%;background-color: blue;color: aliceblue;">
+                        </div>
+                        <br>
+                        <div id="ta" style="border: thin;border-color:black;border-style: solid;padding: 2% 0% 2% 0%; background-color: blue;color: aliceblue;">
+                        </div>
+                    </div>
+                </td>
+            </tr> 
+        </table>   
+    </body>
+</html>

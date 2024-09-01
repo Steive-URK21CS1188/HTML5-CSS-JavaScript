@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buget_1188</title>
+    <style>
+        hr {
+        height: 2px;
+        background-color: blue;
+        border: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module("app", []);
+        app.controller("con", function ($scope) {
+            $scope.eval = function(){
+                var C1=$scope.c1;
+                var C2=$scope.c2;
+                var C3=$scope.c3;
+                var C4=$scope.c4;
+                var C5=$scope.c5;
+                var t1=C1*(C2/100);
+                var t2=C1*(C3/100);
+                var t3=C1*(C4/100);
+                var t4=C1*(C5/100);
+                $scope.o1="Room Rent Rs."+t1;
+                $scope.o2="Accessories Rs."+t2;
+                $scope.o3="Emergency Rs."+t3;
+                $scope.o4="Saving Rs."+t4;
+            }
+        });
+    </script>
+</head>
+<body ng-app="app" ng-controller="con">
+    <table width="100%" style="padding: 0% 0% 0% 0%;margin: 0%;">
+        <tr>
+            <th colspan="4" width="100%" style="background-color:black;color: floralwhite;padding: 1% 0% 1% 0%;font-size: 25px;">
+                Budget Calculator App
+            </th>
+        </tr>
+    </table>
+    <table align="center">
+        <tr>    
+            <td colspan="4"> <br><br>
+                <div style="padding: 2% 5% 10% 5%;width: 10cm;">
+                <label for="c1">Enter Amount you want to Manage:</label><br><br>
+                <input type="number" ng-model="c1" style="width: 8cm;">
+                <br><br>
+                <label for="x">How would you like to divide your Money?</label><br><br>
+                <label for="c2">Room Rent(%):</label>
+                <input type="number" ng-model="c2" style="width: 2cm;"><br><br>
+                <label for="c3">Accessories(%):</label>
+                <input type="number" ng-model="c3" style="width: 2cm;"><br><br>
+                <label for="c4">Emergency(%):</label>
+                <input type="number" ng-model="c4" style="width: 2cm;"><br><br>
+                <label for="c4">Saving(%):</label>
+                <input type="number" ng-model="c5" style="width: 2cm;"><br><br>
+                <table width="100%">
+                    <tr align="center">
+                        <td >
+                            <button ng-click="eval()" type="button" style="background-color: darkblue;color: aliceblue;width: 4cm;">Evaluate my Money</button>
+                        </td>   
+                    </tr>
+                </table>
+                <hr>
+                <div align="center" id="dis" style="font-size: 21px;font-weight: bold;"></div>
+                <div ng-bind="o1" align="center" style="background-color: red;color: aliceblue; padding: 2% 2% 5% 2%; font-size: 22 px;">
+                
+                </div>
+                <div ng-bind="o2" align="center" style="background-color: green;color: aliceblue; padding: 2% 2% 5% 5%; font-size: 22 px;">
+                    
+                </div>
+                <div ng-bind="o3" align="center" style="background-color:blue;color: aliceblue; padding: 2% 2% 5% 2%; font-size: 22 px;">
+                    
+                </div>
+                <div ng-bind="o4" align="center" style="background-color: violet;color: aliceblue; padding: 2% 2% 5% 2%; font-size: 22 px;">
+                    
+                </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

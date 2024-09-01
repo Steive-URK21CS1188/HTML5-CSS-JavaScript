@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cake_1188</title>
+    <style>
+        hr {
+        height: 2px;
+        background-color: blue;
+        border: none;
+        }
+    </style>
+    <script>
+        var C1=0;
+        var C2=0;
+        var C3=0;
+        var C4=0;
+        function price(){
+            C1=parseInt(document.getElementById("c1").value);
+            C2=parseInt(document.getElementById("c2").value);
+            C3=parseInt(document.getElementById("c3").value);
+            C4=parseInt(document.getElementById("c4").value);
+            if(isNaN(C1)){
+                C1=0;
+            }
+            if(isNaN(C2)){
+                C2=0;
+            }
+            if(isNaN(C3)){
+                C3=0;
+            }
+            if(isNaN(C4)){
+                C4=0;
+            }
+            var t=parseInt((850*C1)+(350*C2)+(500*C3)+(700*C4));
+            document.getElementById('dis').innerHTML=("Purchase Order Bill!!");
+            document.getElementById('output').innerHTML=(" Total Price : Rs." + t);
+        }
+    </script>
+</head>
+<body>
+    <table width="100%" style="padding: 0% 0% 0% 0%;margin: 0%;">
+        <tr>
+            <th colspan="4" width="100%" style="background-color: red;color: floralwhite;padding: 1% 0% 1% 0%;font-size: 25px;">
+                CAKE SHOP
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://picky-palate.com/wp-content/uploads/2020/02/IMG_0088-scaled.jpg" style="height: 10cm;width: 10cm;">
+                <p align="center">Oreo Cake - Rs.850</p>
+            </td>
+            <td>
+                <img src="https://handletheheat.com/wp-content/uploads/2015/03/Best-Birthday-Cake-with-milk-chocolate-buttercream-SQUARE.jpg" style="height: 10cm;width: 11cm;">
+                <p align="center">Brown Cake - Rs.350</p>
+            </td>
+            <td>
+                <img src="https://celebrateanddecorate.com/wp-content/uploads/2015/04/A-Floral-Birthday-Cake.jpg" style="height: 10cm;width: 10cm;">
+                <p align="center">Flower Cake - Rs.500</p>           
+            </td>
+            <td>
+                <img src="https://avante.biz/wp-content/uploads/Birthday-Cake-Images-Download-Wallpapers/Birthday-Cake-Images-Download-Wallpapers-008.jpg" style="height: 10cm;width: 10cm;" >
+                <p align="center">Chocolate Truffle - Rs.700</p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="4" width="100%" style="color: blue;padding: 1% 0% 1% 0%;font-size: 29px;">
+                Order Cake
+            </th>
+        </tr>
+    </table>
+    <table align="center">
+        <tr>    
+            <td colspan="4"> <br><br>
+                <div style="padding: 2% 5% 10% 5%;width: 10cm;">
+                <label for="c1">Oreo Cake(Quantity):</label><br><br>
+                <input type="text" name="c1" id="c1" style="width: 8cm;">
+                <br><br>
+                <label for="c2">Brown Cake(Quantity):</label><br><br>
+                <input type="text" name="c2" id="c2" style="width: 8cm;"><br><br>
+                <label for="c3">Flower Cake(Quantity):</label><br><br>
+                <input type="text" name="c3" id="c3" style="width: 8cm;"><br><br>
+                <label for="c4">Chocolate Truffle(Quantity):</label><br><br>
+                <input type="text" name="c4" id="c4" style="width: 8cm;"><br><br>
+                <table width="100%">
+                    <tr align="center">
+                        <td >
+                            <button  onclick="price()" type="button" style="background-color: blue;color: aliceblue;width: 4cm;">Place Order</button>
+                        </td>   
+                    </tr>
+                </table>
+                <hr>
+                <p align="center" id="dis" style="font-size: 21px;color: green;font-weight: bold;"></p>
+                <div id="output" align="center" style="color: red; padding: 2% 5% 10% 5%; font-size: 22 px;">
+                    
+                </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

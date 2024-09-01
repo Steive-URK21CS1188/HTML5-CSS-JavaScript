@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color:black;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            font-size: 15px;
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#changeBg-Color").click(function () {
+                $("#box").css("background-color", "red");
+            });
+            $("#changeTxt-Color").click(function () {
+                $("#box").css("color", "black");
+            });
+            $("#ChangeHeight").click(function () {
+                $("#box").css("height", "400px");
+            });
+            $("#ChangeWidth").click(function () {
+                $("#box").css("width", "400px");
+            });
+            $("#ChangeFontSize").click(function () {
+                $("#box").css("font-size", "50px");
+            });
+            $("#show").click(function () {
+                $("#box").show(1000);
+            });
+            $("#hide").click(function () {
+                $("#box").hide(1000);
+            });
+
+            $("#toggle").click(function () {
+                $("#box").toggle(1000);
+            });
+
+            $("#fadeIn").click(function () {
+                $("#box").fadeIn(1000);
+            });
+            $("#fadeOut").click(function () {
+                $("#box").fadeOut(1000);
+            });
+            $("#fadeToggle").click(function () {
+                $("#box").fadeToggle(1000);
+            });
+            $("#slideUp").click(function () {
+                $("#box").slideUp(1000);
+            });
+
+            $("#slideDown").click(function () {
+                $("#box").slideDown(1000);
+            });
+
+            $("#slideToggle").click(function () {
+                $("#box").slideToggle(1000);
+            });
+            $("#animate").click(function () {
+                $("#box").animate({
+                    width: "50%",
+                    height:"50%",
+                    opacity: "0.5",
+                    marginLeft: "50px",
+                    Left:"10px",
+                    fontSize: "3cm"
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">CS1188</div>
+    <br><br><br>
+    <div style="margin-top:15% ;">
+    <button id="changeBg-Color">BG Color</button>
+    <button id="changeTxt-Color">Text Color</button>
+    <button id="ChangeHeight">Height</button>
+    <button id="ChangeWidth">Width</button>
+    <button id="ChangeFontSize">Font Size</button>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="fadeToggle">Fade Toggle</button>
+    <button id="slideUp">Slide Up</button>
+    <button id="slideDown">Slide Down</button>
+    <button id="slideToggle">Slide Toggle</button>
+    <button id="animate">Animate</button>
+    </div>
+</body>
+</html>
+      
